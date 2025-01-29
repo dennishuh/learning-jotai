@@ -1,9 +1,10 @@
-import { atom, useAtom } from 'jotai';
+import { useAtom } from 'jotai';
 
+import { counterAtom } from './atoms';
 import Counter from './component/Counter';
-import './App.css';
+import DoubleCounter from './component/DoubleCounter';
 
-export const counterAtom = atom(0);
+import './App.css';
 
 function App() {
 	const [count] = useAtom(counterAtom);
@@ -11,6 +12,7 @@ function App() {
 		<>
 			<h1>{count}</h1>
 			<Counter />
+			<DoubleCounter />
 		</>
 	);
 }
